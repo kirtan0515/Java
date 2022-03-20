@@ -37,7 +37,7 @@ public class PostalAddress
         byear = JOptionPane.showInputDialog("Please enter " + "your birth year: ");
 
         // Get the user's birth city
-        bcity
+        //bcity
 
         // Create an output
         output = "Name     : " + lname + ", " + fname + "\nBirthday: " + bmonth +
