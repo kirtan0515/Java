@@ -9,7 +9,9 @@ import javax.swing.JOptionPane;
 
 public class ShippingCost
 {
-    public static void main(String[] args)
+    public static void main(
+            String[] args
+    )
     {
 
         double weight = 0.0;                      // Weight of the Package
@@ -19,11 +21,12 @@ public class ShippingCost
         double sCharge = 0.0;                     // Surcharge
 
         // Input From User
-        zipCode = Integer.parseInt(JOptionPane.showInputDialog("Please Enter Zip - Code"));
-        weight  = Double.parseDouble(JOptionPane.showInputDialog("Please Enter Weight"));
         l       = Integer.parseInt(JOptionPane.showInputDialog("Please Enter Length"));
         w       = Integer.parseInt(JOptionPane.showInputDialog("Please Enter Width"));
         h       = Integer.parseInt(JOptionPane.showInputDialog("Please Enter Height"));
+        zipCode = Integer.parseInt(JOptionPane.showInputDialog("Please Enter Zip - Code"));
+        weight  = Double.parseDouble(JOptionPane.showInputDialog("Please Enter Weight"));
+
 
         area = l * w * h;                         // Calculate the area
 
@@ -50,17 +53,17 @@ public class ShippingCost
         { sCharge = cost * 0.05; }
         if(z == 6)
         { sCharge = cost * 0.07; }
+        else
+        { sCharge = cost * 0.09; }
 
         if(zipCode % 2 == 0)                      // If the ZipCode is Even
         { sCharge = cost * 0.02; }
 
         // Output Message
-        String output = "Zip Code     :   " + zipCode +"\n" +
-                "Length       :   " + l + "\n" +
-                "Width        :   " + w +"\n" +
-                "Height       :   " + h +"\n" +
+        String output =  "Surcharge(s) : $ " + sCharge +"\n" +
+                "Zip Code     :   " + zipCode +"\n" +
                 "Cost         : $ " + cost +"\n" +
-                "Surcharge(s) : $ " + sCharge +"\n" +
+                "Weight       :   " + weight + "\n" +
                 "--------------------------" + "\n" +
                 "Total Cost   : $ " + (cost + sCharge);
 
