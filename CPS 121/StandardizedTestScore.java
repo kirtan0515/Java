@@ -7,24 +7,20 @@
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class StandardizedTestScores {
+public class StandardizedTestScore {
 
-    public static void main(
-            String[] args
-    )
-
+    public static void main(String[] args)
     {
-        // create object
-        TestGrades ts = new TestGrades();
+
         // call inputBox method to take inputs from user
-        int[] grades = ts.inputBox();
+        int[] grades = inputBox();
 
         // call displayGrade method to display grades
-        ts.displayGrades(grades);
+        displayGrades(grades);
     }
 
     // this method takes input from user and return an array of Grades
-    int[] inputBox() {
+    static int[] inputBox(){
         int[] grades = new int[10];
         int i;
         String input;
@@ -44,13 +40,14 @@ public class StandardizedTestScores {
 
     // define method to display grades, and calculate average, highest and lowest grade
     // this method take grades array as parameter
-    void displayGrades(int[] grades) {
-        int i, total = 0;
+    static void displayGrades(int[] grades) {
+        double total = 0;
+        double average;
         int high = 0, low = grades[0];
         // display grades
         System.out.println("\nThis are all the test grades");
         System.out.println("==========================================");
-        for (i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.print(grades[i] + "\t");
             total = total + grades[i];
 
@@ -63,10 +60,11 @@ public class StandardizedTestScores {
             if (low > grades[i]) low = grades[i];
         }
 
+        average = total / grades.length;
         // display average grades
         System.out.println("\nThe total average of grades");
         System.out.println("==========================================");
-        System.out.println((total / 10));
+        System.out.println(average);
         System.out.println("\nThe Highest-Grade number is: " + high);
         System.out.println("\nThe Lowest-Grade number is: " + low);
     }
