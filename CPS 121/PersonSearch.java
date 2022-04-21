@@ -19,12 +19,15 @@ public class PersonSearch
         System.out.print("Enter the first few characters of " + "the last name to look up: ");
         lookUp = keyboard.nextLine();
 
+
         // Display all of the names that begin with the
         // string entered by the user.
         System.out.println("Here are the names that match:");
-        for (String person : people) {
+        for (String person : people)
+        {
             if (person.startsWith(lookUp))
                 System.out.println(person);
+
         }
     }
     }
